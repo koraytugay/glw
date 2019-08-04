@@ -1,0 +1,28 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+}
+
+td, th {
+    border: 1px solid darkgray;
+    padding: 8px;
+    vertical-align: top;
+}
+
+td {
+    font-family: 'Open Sans', sans-serif;
+}
+
+tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f0f0f0;
+    color: black;
+    font-weight: bolder;
+}

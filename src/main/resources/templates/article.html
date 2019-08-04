@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/header :: header"></head>
+<body>
+<div class="sticky top">
+    <span style="float: right;">
+        <a href="#" id="clap-page" style="text-align: right; margin-right: -4px; font-size: 150%"
+           onclick="clapPage(window.location.pathname); return false;">&#128079;</a>
+        <span id="current-clap-count" style="margin-left: -2px; font-size: 50%;"></span>
+        <!-- populated by containerRight#refreshClapCount -->
+    </span>
+</div>
+<!--/*@thymesVar id="content" type="java.lang.String"*/-->
+<div style="padding-bottom: 20px" th:utext="${content}"></div>
+<div class="sticky bottom">
+    <span style="float: right;">
+        <a href="/" style="font-size: 125%">&#128281;</a>
+    </span>
+</div>
+<script src="/js/pageClap.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/clip.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

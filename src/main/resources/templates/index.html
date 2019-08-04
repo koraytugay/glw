@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"></head>
+<body>
+<!--/*@thymesVar id="treeFlat" type="java.util.List<biz.tugay.glw.gitlab.GitlabFile>"*/-->
+<div style="margin-top: 20px; margin-bottom: 20px">
+<span th:each="file: ${treeFlat}">
+    <span th:if="${file.isDirectory()}">
+        <br/><br/>
+        <span style="font-size: 110%; font-weight: bold; color: black" th:text="${file.getName()}"></span>
+        <br/>
+    </span>
+    <span th:if="${!file.isDirectory()}" style="white-space: nowrap">
+        <a style="font-family: 'Open Sans', sans-serif; color: #414549;" th:href="${file.getPath()}" th:text="'[' + ${file.nameWoExtension()} + ']'"></a>&nbsp;
+    </span>
+</span>
+</div>
+</body>
+</html>
