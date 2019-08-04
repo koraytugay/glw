@@ -2,7 +2,7 @@
 
 Java application that fetches the contents of my [personal page](www.koraytugay.com) from https://gitlab.com/koraytugay/notebook and serves them.
 
-Made possible by the following..
+Made possible by:
 - Apache Maven
 - Spring Boot
 - H2 Database Engine
