@@ -15,24 +15,18 @@ public class ArticleController {
 
     GitlabFetchService gitlabFetchService;
 
-    public ArticleController(GitlabFetchService gitlabFetchService) {
-        this.gitlabFetchService = gitlabFetchService;
-    }
-
     MutableDataSet options = new MutableDataSet();
     Parser parser = Parser.builder(options).build();
     HtmlRenderer renderer = HtmlRenderer.builder(options).build();
 
-    @GetMapping(path = "/**/*.md")
-    public String article(Model model, HttpServletRequest req) {
-        String requestURI = req.getRequestURI();
-        if (requestURI.startsWith("/")) {
-            requestURI = requestURI.substring(1);
-        }
-        String master = gitlabFetchService.fetchArticle("6735489", "master", requestURI);
-        String content = renderer.render(parser.parse(master));
-        model.addAttribute("content", content);
-        return "article";
+    public ArticleController(GitlabFetchService gitlabFetchService) {
+        this.gitlabFetchService = gitlabFetchService;
     }
 
+    @GetMapping(path = "/**/*.md")
+    public String article(Model model, HttpServletRequest req) {
+        String requestURI = req.getRequestURI().startsWith("/") ? req.getRequestURI().substring(1) : req.getRequestURI();
+        model.addAttribute("content", renderer.render(parser.parse(gitlabFetchService.fetchArticle("6735489", "master", requestURI))));
+        return "article";
+    }
 }
