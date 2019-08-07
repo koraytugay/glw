@@ -19,8 +19,11 @@ function buildToc() {
         toc = toc.concat('<li>').concat('<a href="#' + id + '">').concat(text).concat('</a>').concat('</li>');
     });
     toc = toc.concat('</ul></span>');
-    if (atLeastOneItemFound)
+    if (atLeastOneItemFound) {
         $("h1").after(toc);
+        $(document.body).addClass('body-shifted');
+
+    }
 }
 
 $(document).ready(buildToc);
