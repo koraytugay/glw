@@ -3,15 +3,15 @@ function buildToc() {
     var inInner = false;
     var atLeastOneItemFound = false;
     $("h2, h3").each(function () {
+        atLeastOneItemFound = true;
+
         if (this.tagName === 'H3' && !inInner) {
             inInner = true;
             toc = toc.concat('<ul>');
-            atLeastOneItemFound = true;
         }
         if (this.tagName === 'H2' && inInner) {
             inInner = false;
             toc = toc.concat('</ul>');
-            atLeastOneItemFound = true;
         }
         var text = $(this).text();
         var id = text.toLowerCase().replace(/ /g, '-');
