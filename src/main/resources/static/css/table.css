@@ -10,10 +10,6 @@ td, th {
     vertical-align: top;
 }
 
-td {
-    font-family: 'Open Sans', sans-serif;
-}
-
 tr:nth-child(odd) {
     background-color: #f0f0f0;
 }

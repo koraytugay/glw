@@ -1,33 +1,29 @@
 body {
     max-width: 900px;
     margin: auto;
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: sans-serif;
     color: #2e2e2e;
     padding: 4px;
+    -webkit-font-smoothing: antialiased;
 }
 
-p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.0625rem;
-    -webkit-font-smoothing: antialiased;
+hr {
+    border: none;
+    height: 2px;
+    background-color: #f0f0f0;
 }
 
 strong {
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-weight: bolder;
-    font-size: 1.0625rem;
-    -webkit-font-smoothing: antialiased;
 }
 
 h1 {
     border-bottom: 2px solid #f0f0f0;
     margin-bottom: 15px;
-    -webkit-font-smoothing: antialiased;
 }
 
 h2, h3, h4, h5 {
     margin-bottom: 10px;
-    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -38,6 +34,18 @@ a {
 pre {
     display: grid;
     border-radius: 2px 4px 2px 4px;
+    position: relative;
+}
+
+pre code {
+    font-family: Menlo, Monospaced, monospace;
+    font-size: 80% !important;
+    line-height: 150%;
+    border: thin solid darkgray;
+    border-radius: 5px;
+    background-color: #f0f0f0 !important;
+    z-index: -1;
+    -webkit-font-smoothing: initial;
 }
 
 div code, li code {
@@ -51,42 +59,22 @@ div code, li code {
 
 }
 
-pre {
-    position: relative;
-}
-
-pre code {
-    font-family: Menlo, Monospaced, monospace;
-    font-size: 80%;
-    line-height: 150%;
-    border: thin solid darkgray;
-    border-radius: 5px;
-    background-color: #f0f0f0 !important;
-    z-index: -1;
-}
-
 blockquote {
     margin: 10px 10px;
     padding-left: 15px;
     border-left: 3px solid #f0f0f0;
     border-left-width: thick;
     font-style: italic;
-    font-size: 1.0625rem;
-    -webkit-font-smoothing: antialiased;
 }
 
 ul, ol {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.0625rem;
-    -webkit-font-smoothing: antialiased;
 }
 
 li {
-    margin: 1px 0 1px 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.0625rem;
-    -webkit-font-smoothing: antialiased;
+    margin: 4px 0 4px 0;
+    line-height: 120%;
 }
 
 .sticky {
@@ -102,10 +90,4 @@ li {
 
 .bottom {
     bottom: 0;
-}
-
-hr {
-    border: none;
-    height: 2px;
-    background-color: #f0f0f0;
 }
