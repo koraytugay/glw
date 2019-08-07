@@ -95,7 +95,7 @@ body {
     margin: auto;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 960px) {
     .body-shifted {
         margin-left: 26%;
     }
@@ -113,5 +113,11 @@ body {
     }
     #toc-header {
         margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .sticky {
+        width: calc(98%);
     }
 }
