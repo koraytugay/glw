@@ -11,7 +11,7 @@
         <br/>
     </span>
     <span th:if="${!file.isDirectory()}" style="white-space: nowrap">
-        <a style="color: #2e2e2e" th:href="${file.getPath()}" th:text="'[' + ${file.nameWoExtension()} + ']'"></a>&nbsp;
+        <a th:href="${file.getPath()}" th:text="'[' + ${file.nameWoExtension()} + ']'"></a>&nbsp;
     </span>
 </span>
 </div>

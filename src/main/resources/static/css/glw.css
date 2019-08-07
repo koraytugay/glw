@@ -1,6 +1,5 @@
 body {
     max-width: 900px;
-    margin: auto;
     font-family: sans-serif;
     color: #2e2e2e;
     padding: 4px;
@@ -51,7 +50,7 @@ pre code {
 div code, li code {
     display: inline-block;
     background-color: #f0f0f0;
-    padding: 2px 4px 2px 4px;
+    padding: 1px 4px 1px 4px;
     font-family: Menlo, Monospaced, monospace;
     font-size: 85%;
     border: solid thin darkgray;
@@ -90,4 +89,29 @@ li {
 
 .bottom {
     bottom: 0;
+}
+
+#toc-header {
+    margin-top: -10px;
+}
+
+@media screen and (min-width: 800px) {
+    .toc {
+        height: 100%;
+        width: 25%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        margin-left: 26%;
+    }
+    #toc-header {
+        margin-top: 40px;
+    }
 }
