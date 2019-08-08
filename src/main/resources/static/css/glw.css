@@ -1,3 +1,13 @@
+body {
+    max-width: 900px;
+    font-family: sans-serif;
+    color: #2e2e2e;
+    padding: 4px;
+    -webkit-font-smoothing: antialiased;
+    margin: auto;
+    cursor: default;
+}
+
 hr {
     border: none;
     height: 2px;
@@ -49,6 +59,10 @@ div code, li code {
 
 }
 
+p {
+    line-height: 1.25em;
+}
+
 blockquote {
     margin: 10px 10px;
     padding-left: 15px;
@@ -64,7 +78,6 @@ ul, ol {
 
 li {
     margin: 4px 0 4px 0;
-    line-height: 120%;
 }
 
 .sticky {
@@ -86,15 +99,6 @@ li {
     margin-top: -10px;
 }
 
-body {
-    max-width: 900px;
-    font-family: sans-serif;
-    color: #2e2e2e;
-    padding: 4px;
-    -webkit-font-smoothing: antialiased;
-    margin: auto;
-}
-
 @media screen and (min-width: 960px) {
     .body-shifted {
         margin-left: 26%;
@@ -112,7 +116,7 @@ body {
         display: none;
     }
     #toc-header {
-        margin-top: 40px;
+        margin-top: 30px;
     }
 }
 
