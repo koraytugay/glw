@@ -51,7 +51,7 @@ pre code {
 div code, li code {
     display: inline-block;
     background-color: #f8f8f8;
-    padding: 1px 4px 1px 4px;
+    padding: 2px 4px 2px 4px;
     font-family: Menlo, Monospaced, monospace;
     font-size: 85%;
     border: solid thin darkgray;
@@ -78,52 +78,6 @@ ul, ol {
 
 li {
     margin: 4px 0 4px 0;
-}
-
-.sticky {
-    overflow: hidden;
-    position: fixed;
-    width: 900px;
-    margin: auto;
-}
-
-.top {
-    top: 10px;
-}
-
-.bottom {
-    bottom: 0;
-}
-
-#toc-header {
-    margin-top: -10px;
-}
-
-@media screen and (min-width: 960px) {
-    .body-shifted {
-        margin-left: 26%;
-    }
-    .toc {
-        height: 100%;
-        width: 25%;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        overflow-x: hidden;
-    }
-    ::-webkit-scrollbar {
-        display: none;
-    }
-    #toc-header {
-        margin-top: 15px;
-    }
-}
-
-@media screen and (max-width: 960px) {
-    .sticky {
-        width: calc(98%);
-    }
 }
 
 .hljs-tag, .hljs-name, .hljs-attribute .hljs-type, .hljs-class .hljs-title {
