@@ -11,7 +11,7 @@ body {
 hr {
     border: none;
     height: 2px;
-    background-color: #f8f8f8;
+    background-color: darkgray;
 }
 
 strong {
@@ -19,9 +19,13 @@ strong {
 }
 
 h1 {
-    border-bottom: 2px solid #f8f8f8;
+    border-bottom: 1px solid darkgray;
     margin-bottom: 15px;
     margin-top: 5px;
+}
+
+h2 {
+    border-bottom: 1px solid lightgray;
 }
 
 h2, h3, h4, h5 {
@@ -29,7 +33,7 @@ h2, h3, h4, h5 {
 }
 
 a {
-    color: #07C;
+    color: #0461B1;
     text-decoration: none;
 }
 
@@ -46,17 +50,13 @@ pre code {
     border: thin solid darkgray;
     border-radius: 5px;
     -webkit-font-smoothing: initial;
+    color: #2e2e2e !important;
 }
 
 div code, li code {
-    display: inline-block;
-    background-color: #f8f8f8;
-    padding: 2px 4px 2px 4px;
+    color: #2e2e2e;
     font-family: Menlo, Monospaced, monospace;
-    font-size: 85%;
-    border: solid thin darkgray;
-    border-radius: 4px;
-
+    font-size: 90%;
 }
 
 p {
@@ -66,7 +66,7 @@ p {
 blockquote {
     margin: 10px 10px;
     padding-left: 15px;
-    border-left: 3px solid #f8f8f8;
+    border-left: 3px solid darkgray;
     border-left-width: thick;
     font-style: italic;
 }
@@ -80,6 +80,15 @@ li {
     margin: 4px 0 4px 0;
 }
 
-.hljs-tag, .hljs-name, .hljs-attribute .hljs-type, .hljs-class .hljs-title {
-    color: #07c !important;
+.hljs-keyword, .hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-name, .hljs-tag {
+    color: #0461B1 !important;
+}
+
+.hljs-meta {
+    color: #008000 !important;
+}
+
+
+.hljs-number {
+    color: #0461B1;
 }
