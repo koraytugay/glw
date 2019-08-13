@@ -47,7 +47,8 @@ pre code {
     font-family: Menlo, Monospaced, monospace;
     font-size: 80% !important;
     line-height: 1.5;
-    border: thin solid darkgray;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
     border-radius: 5px;
     -webkit-font-smoothing: initial;
     color: #2e2e2e !important;
@@ -91,4 +92,29 @@ li {
 
 .hljs-number {
     color: #0461B1;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+}
+
+td, th {
+    border: 1px solid darkgray;
+    padding: 8px;
+    vertical-align: top;
+}
+
+tr:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f8f8f8;
+    color: black;
+    font-weight: bolder;
 }

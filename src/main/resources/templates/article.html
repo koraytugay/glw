@@ -3,8 +3,7 @@
 <head th:replace="fragments/header :: header"></head>
 <body>
 <!--/*@thymesVar id="content" type="java.lang.String"*/-->
-<div style="padding-bottom: 20px" th:utext="${content}"></div>
-<script src="/js/pageClap.js"></script>
+<div th:utext="${content}"></div>
 <script src="/js/toc.js"></script>
 <script src="/js/clip.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
