@@ -19,17 +19,21 @@ strong {
 }
 
 h1 {
-    border-bottom: 1px solid darkgray;
     margin-bottom: 15px;
     margin-top: 5px;
 }
 
-h2 {
-    border-bottom: 1px solid lightgray;
+h2, h3, h4, h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-h2, h3, h4, h5 {
-    margin-bottom: 10px;
+h2 {
+    font-size: 1.35em;
+}
+
+h3 {
+    font-size: 1.15em;
 }
 
 a {
@@ -39,29 +43,34 @@ a {
 
 pre {
     display: grid;
-    border-radius: 2px 4px 2px 4px;
     position: relative;
-}
-
-pre code {
-    font-family: Menlo, Monospaced, monospace;
-    font-size: 80% !important;
-    line-height: 1.5;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-    border-radius: 5px;
-    -webkit-font-smoothing: initial;
-    color: #2e2e2e !important;
 }
 
 div code, li code {
     color: #2e2e2e;
     font-family: Menlo, Monospaced, monospace;
     font-size: 90%;
+    background-color: #f8f8f8;
+    border: 1px solid darkgray;
+    border-radius: 2px;
+    padding: 1px 4px 1px 4px;
+}
+
+pre code {
+    font-family: Menlo, Monospaced, monospace;
+    font-size: 80% !important;
+    line-height: 1.5;
+    -webkit-font-smoothing: initial;
+    color: #2e2e2e !important;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }
 
 p {
-    line-height: 1.25em;
+    line-height: 1.40em;
+    margin-bottom: 10px;
 }
 
 blockquote {
@@ -78,7 +87,7 @@ ul, ol {
 }
 
 li {
-    margin: 4px 0 4px 0;
+    line-height: 1.40em;
 }
 
 .hljs-keyword, .hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-name, .hljs-tag, .hljs-selector-pseudo {
@@ -100,16 +109,6 @@ table {
     margin-top: 15px;
 }
 
-td, th {
-    border: 1px solid darkgray;
-    padding: 8px;
-    vertical-align: top;
-}
-
-tr:nth-child(odd) {
-    background-color: lightgray;
-}
-
 th {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -117,4 +116,10 @@ th {
     background-color: lightgray;
     color: black;
     font-weight: bolder;
+}
+
+td, th {
+    border: 1px solid darkgray;
+    padding: 8px;
+    vertical-align: top;
 }
