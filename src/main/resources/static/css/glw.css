@@ -81,7 +81,7 @@ li {
     margin: 4px 0 4px 0;
 }
 
-.hljs-keyword, .hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-name, .hljs-tag {
+.hljs-keyword, .hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-name, .hljs-tag, .hljs-selector-pseudo {
     color: #0461B1 !important;
 }
 
@@ -107,14 +107,14 @@ td, th {
 }
 
 tr:nth-child(odd) {
-    background-color: #f8f8f8;
+    background-color: lightgray;
 }
 
 th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #f8f8f8;
+    background-color: lightgray;
     color: black;
     font-weight: bolder;
 }
