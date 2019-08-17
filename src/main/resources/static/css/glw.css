@@ -1,5 +1,5 @@
 body {
-    max-width: 900px;
+    max-width: 750px;
     font-family: sans-serif;
     color: #2e2e2e;
     padding: 4px;
@@ -62,10 +62,8 @@ pre code {
     line-height: 1.5;
     -webkit-font-smoothing: initial;
     color: #2e2e2e !important;
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    border: 1px solid lightgray;
+    background-color: #f8f8f8 !important;
 }
 
 p {
@@ -76,8 +74,8 @@ p {
 blockquote {
     margin: 10px 10px;
     padding-left: 15px;
-    border-left: 3px solid darkgray;
-    border-left-width: thick;
+    border-left: solid darkgray;
+    border-left-width: initial;
     font-style: italic;
 }
 
@@ -115,7 +113,6 @@ th {
     text-align: left;
     background-color: lightgray;
     color: black;
-    font-weight: bolder;
 }
 
 td, th {
