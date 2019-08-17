@@ -1,6 +1,6 @@
 # glw
 
-Java application that fetches the contents of my [personal page](www.koraytugay.com) from https://gitlab.com/koraytugay/notebook and serves them.
+Java application that fetches the contents of my [personal page](https://www.koraytugay.com) from https://gitlab.com/koraytugay/notebook and serves them.
 
 Made possible by:
 - Apache Maven
