@@ -22,15 +22,20 @@ public class GitlabFetchService {
         boolean isContent = true;
         try (Scanner scanner = new Scanner(gitlabGateway.fetchRawContent(projectId, branch, path)).useDelimiter("-embed-")) {
             while (scanner.hasNext()) {
-                if (isContent)
-                    sb.append(scanner.next());
-                else
-                    sb.append(gitlabEmbedProcessor.process(new Gson().fromJson(scanner.next(), EmbedInfo.class)));
-
-                isContent = !isContent;
+                isContent = abuseboom(sb, isContent, scanner);
             }
         }
 
         return sb.toString();
+    }
+
+    private boolean abuseboom(final StringBuilder sb, boolean isContent, final Scanner scanner) {
+        if (isContent)
+            sb.append(scanner.next());
+        else
+            sb.append(gitlabEmbedProcessor.process(new Gson().fromJson(scanner.next(), EmbedInfo.class)));
+
+        isContent = !isContent;
+        return isContent;
     }
 }

@@ -24,9 +24,16 @@ public class ArticleController {
     }
 
     @GetMapping(path = "/**/*.md")
-    public String article(Model model, HttpServletRequest req) {
-        String requestURI = req.getRequestURI().startsWith("/") ? req.getRequestURI().substring(1) : req.getRequestURI();
-        model.addAttribute("content", renderer.render(parser.parse(gitlabFetchService.fetchArticle("6735489", "master", requestURI))));
+    public String article(Model m, HttpServletRequest httpServletRequest) {
+        String uri;
+        if (httpServletRequest.getRequestURI().startsWith("/")) {
+            String substring = httpServletRequest.getRequestURI().substring(1);
+            uri = substring;
+        }
+        else {
+            uri = httpServletRequest.getRequestURI();
+        }
+        m.addAttribute("content", renderer.render(parser.parse(gitlabFetchService.fetchArticle("6735489", "master", uri))));
         return "article";
     }
 }

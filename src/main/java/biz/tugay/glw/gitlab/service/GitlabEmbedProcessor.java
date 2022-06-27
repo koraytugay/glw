@@ -26,16 +26,21 @@ public class GitlabEmbedProcessor {
 
         ArrayList<GitlabFile> embedFiles = new ArrayList<>();
 
-        // EmbedInfo#includeOnly is stronger than omit files
-        // If there is includeOnly files, omitted files are not relevant
-        if (!embedInfo.getIncludeOnly().isEmpty()) {
-            gitlabFiles.stream().filter(gitlabFile -> embedInfo.getIncludeOnly().contains(gitlabFile.getName())).forEach(embedFiles::add);
-        } else {
-            gitlabFiles.stream().filter(gitlabFile -> !embedInfo.getOmitFiles().contains(gitlabFile.getName())).forEach(embedFiles::add);
-        }
+        extracted(embedInfo, gitlabFiles, embedFiles);
 
         String embedBody = "";
 
+        embedBody = looploop(projectId, branch, embedFiles, embedBody);
+
+        return embedBody;
+    }
+
+    private String looploop(
+        final String projectId,
+        final String branch,
+        final ArrayList<GitlabFile> embedFiles,
+        String embedBody)
+    {
         for (GitlabFile gitlabFile : embedFiles) {
             String filename = gitlabFile.getName();
             int dotIndex = filename.lastIndexOf(".");
@@ -45,7 +50,22 @@ public class GitlabEmbedProcessor {
             embedBody = embedBody.concat(gitlabGateway.fetchRawContent(projectId, branch, gitlabFile.getPath()).trim());
             embedBody = embedBody.concat("\n```\n");
         }
-
         return embedBody;
+    }
+
+    private void extracted(
+        final EmbedInfo embedInfo,
+        final List<GitlabFile> gitlabFiles,
+        final ArrayList<GitlabFile> embedFiles)
+    {
+        // EmbedInfo#includeOnly is stronger than omit files
+        // If there is includeOnly files, omitted files are not relevant
+        if (!embedInfo.getIncludeOnly().isEmpty()) {
+            gitlabFiles.stream().filter(gitlabFile -> embedInfo.getIncludeOnly().contains(gitlabFile.getName())).forEach(
+                embedFiles::add);
+        } else {
+            gitlabFiles.stream().filter(gitlabFile -> !embedInfo.getOmitFiles().contains(gitlabFile.getName())).forEach(
+                embedFiles::add);
+        }
     }
 }

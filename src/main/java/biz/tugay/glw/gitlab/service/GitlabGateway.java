@@ -13,6 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 import java.nio.charset.Charset;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -29,15 +30,26 @@ public class GitlabGateway {
     public List<GitlabFile> fetchFilesRecursivelyToFlatList(String projectId, String branch, String path) {
         List<GitlabFile> gitlabFiles = fetchFilesAtPath(projectId, branch, path);
 
-        List<GitlabFile> directories = gitlabFiles.stream().filter(GitlabFile::isDirectory).collect(toList());
+        Stream<GitlabFile> stream = gitlabFiles.stream();
+        Stream<GitlabFile> gitlabFileStream = stream.filter(GitlabFile::isDirectory);
+        List<GitlabFile> directories = gitlabFileStream.collect(toList());
         gitlabFiles.removeIf(GitlabFile::isDirectory);
 
+        drboom(projectId, branch, gitlabFiles, directories);
+
+        return gitlabFiles;
+    }
+
+    private void drboom(
+        final String projectId,
+        final String branch,
+        final List<GitlabFile> gitlabFiles,
+        final List<GitlabFile> directories)
+    {
         directories.forEach(directory -> {
             gitlabFiles.add(directory);
             gitlabFiles.addAll(fetchFilesRecursivelyToFlatList(projectId, branch, directory.getPath()));
         });
-
-        return gitlabFiles;
     }
 
     public String fetchRawContent(String projectId, String branch, String path) {
