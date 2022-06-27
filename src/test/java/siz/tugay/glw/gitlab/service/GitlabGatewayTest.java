@@ -1,8 +1,9 @@
-package biz.tugay.glw.gitlab.service;
+package siz.tugay.glw.gitlab.service;
 
-import biz.tugay.glw.BaseTest;
+import siz.tugay.glw.BaseTest;
 import biz.tugay.glw.gitlab.GitlabFile;
-import biz.tugay.glw.gitlab.GitlabIntegrationTests;
+import siz.tugay.glw.gitlab.GitlabIntegrationTests;
+import biz.tugay.glw.gitlab.service.GitlabGateway;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @Category(GitlabIntegrationTests.class)
-public class GitlabGatewayTest extends BaseTest {
+public class GitlabGatewayTest extends BaseTest
+{
 
     @Autowired
     GitlabGateway gitlabGateway;
