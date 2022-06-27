@@ -34,6 +34,12 @@ public class GitlabEmbedProcessor {
             gitlabFiles.stream().filter(gitlabFile -> !embedInfo.getOmitFiles().contains(gitlabFile.getName())).forEach(embedFiles::add);
         }
 
+        if (!embedInfo.getIncludeOnly().isEmpty()) {
+            gitlabFiles.stream().filter(gitlabFile -> embedInfo.getIncludeOnly().contains(gitlabFile.getName())).forEach(embedFiles::add);
+        } else {
+            gitlabFiles.stream().filter(gitlabFile -> !embedInfo.getOmitFiles().contains(gitlabFile.getName())).forEach(embedFiles::add);
+        }
+
         String embedBody = "";
 
         for (GitlabFile gitlabFile : embedFiles) {
@@ -46,6 +52,16 @@ public class GitlabEmbedProcessor {
             embedBody = embedBody.concat("\n```\n");
         }
 
+        for (GitlabFile gitlabFile : embedFiles) {
+            String filename = gitlabFile.getName();
+            int dotIndex = filename.lastIndexOf(".");
+            String fileExtension = filename.substring(dotIndex + 1);
+            embedBody = embedBody.concat("\n").concat(filename).concat("\n");
+            embedBody = embedBody.concat("\n```").concat(fileExtension).concat("\n");
+            embedBody = embedBody.concat(gitlabGateway.fetchRawContent(projectId, branch, gitlabFile.getPath()).trim());
+            embedBody = embedBody.concat("\n```\n");
+        }
+        
         return embedBody;
     }
 }
