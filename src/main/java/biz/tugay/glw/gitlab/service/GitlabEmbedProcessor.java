@@ -12,10 +12,6 @@ public class GitlabEmbedProcessor {
 
     GitlabGateway gitlabGateway;
 
-    public GitlabEmbedProcessor(GitlabGateway gitlabGateway) {
-        this.gitlabGateway = gitlabGateway;
-    }
-
     public String process(EmbedInfo embedInfo) {
         String projectId = embedInfo.getProjectId();
         String branch = embedInfo.getBranch();
@@ -47,5 +43,10 @@ public class GitlabEmbedProcessor {
         }
 
         return embedBody;
+    }    
+    
+    public GitlabEmbedProcessor(GitlabGateway gitlabGateway) {
+        this.gitlabGateway = gitlabGateway;
     }
+
 }
