@@ -12,8 +12,8 @@ function applicable() {
 }
 
 function run() {
-    echo "[{ \"type\": \"Global Info\", \
-            \"message\": \"Lift is analyzing commit $commit\", \
+    echo "[{ \"type\": \"Global Bug\", \
+            \"message\": \"Lay Lay Lay layyy... commit: $commit\", \
             \"file\": \"file.txt\", \
             \"category\": \"bug\", \
             \"details_url\": \"https://example.com/#example\" \
