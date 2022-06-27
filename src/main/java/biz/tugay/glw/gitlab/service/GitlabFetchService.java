@@ -18,19 +18,18 @@ public class GitlabFetchService {
     @Cacheable(value = "articleCache")
     public String fetchArticle(String projectId, String branch, String path) {
         StringBuilder sb = new StringBuilder();
-
         boolean isContent = true;
         try (Scanner scanner = new Scanner(gitlabGateway.fetchRawContent(projectId, branch, path)).useDelimiter("-embed-")) {
             while (scanner.hasNext()) {
-                if (isContent)
+                if (isContent) {
                     sb.append(scanner.next());
-                else
-                    sb.append(gitlabEmbedProcessor.process(new Gson().fromJson(scanner.next(), EmbedInfo.class)));
-
+                } 
+                else {
+                  sb.append(gitlabEmbedProcessor.process(new Gson().fromJson(scanner.next(), EmbedInfo.class)));
+                }
                 isContent = !isContent;
             }
         }
-
         return sb.toString();
     }
 }
