@@ -1,2 +1,2 @@
 tools=[]
-customTools = [".lift/tool.sh"]
+customTools = ["./customtool.sh"]
