@@ -1,4 +1,4 @@
-package biz.tugay.glw.gitlab;
+package siz.tugay.glw.gitlab;
 
 public interface GitlabIntegrationTests {
 }

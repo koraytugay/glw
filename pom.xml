@@ -93,7 +93,7 @@
                         <include>**/*.class</include>
                     </includes>
                     <excludedGroups>
-                        biz.tugay.glw.gitlab.GitlabIntegrationTests
+                        GitlabIntegrationTests
                     </excludedGroups>
                 </configuration>
             </plugin>
@@ -108,7 +108,7 @@
                         <include>**/*.class</include>
                     </includes>
                     <groups>
-                        biz.tugay.glw.gitlab.GitlabIntegrationTests
+                        GitlabIntegrationTests
                     </groups>
                 </configuration>
             </plugin>
